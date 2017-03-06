@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="factoriesServicesDemo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <title>Multiple Views</title>
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+</head>
+<body ng-controller='factoriesServicesDemoCtrl'>
+<ion-header-bar class="bar-positive">
+  <h1 class="title">Factories and Services Demo</h1>
+</ion-header-bar>
+<ion-content class="has-header">
+  <div class='container'>
+    <label class="item item-input">
+      <input type='text' ng-model='$parent.firstName' placeholder='First Name'>
+    </label>
+
+    <label class="item item-input">
+      <input type='text' ng-model='$parent.lastName' placeholder='Last Name'>
+    </label>
+
+    <label class="item item-input">
+      <input type='text' ng-model='$parent.email' placeholder='Email'>
+    </label>
+
+    <div align="center">
+      <br>
+      <button style="float: none; width: 90%;" class="button button-royal button-large" ng-click="addUser()">Add User</button>
+    </div>
+
+    <div align="center">
+      <br>
+      <button style="float: none; width: 90%;" class="button button-royal button-large" ng-click="updateUser()">Update User</button>
+    </div>
+    <div align="center">
+      <br>
+      <button style="float: none; width: 90%;" class="button button-assertive button-large" ng-click="deleteUser()">Delete User</button>
+    </div>
+    <ul>
+      <li class="button button-full" ng-repeat="selectedUser in users" ng-click="selectUser(selectedUser)">
+        First Name: {{selectedUser.firstName}} <br>Last Name: {{selectedUser.lastName}} <br>Email: {{selectedUser.email}}</li>
+    </ul>
+  </div>
+</ion-content>
+</body>
+</html>
